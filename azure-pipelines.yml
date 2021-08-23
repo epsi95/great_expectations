@@ -212,10 +212,6 @@ stages:
               pip install pypandoc
             displayName: 'Install pandoc'
 
-          - bash: pip install pandas
-            condition: eq(variables['pandas.version'], 'latest')
-            displayName: 'Install pandas latest'
-
           - bash: pip install pandas==$(pandas.version)
             condition: ne(variables['pandas.version'], 'latest')
             displayName: 'Install pandas - $(pandas.version)'
